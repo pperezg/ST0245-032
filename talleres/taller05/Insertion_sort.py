@@ -1,4 +1,6 @@
-# Insertion sort algorithm;
+import matplotlib.pyplot as plt 
+import timeit
+import sys
 
 def insertion_sort(list):
     for i in range(1, len(list)):
@@ -11,6 +13,20 @@ def insertion_sort(list):
                 j -= 1
             else:
                 break
-list = [7, 8, 45, 1, 9, 10, 2, 15, 0, 5]
-insertion_sort(list)
-print(list)
+
+a = []
+tiempos = []
+for f in range (20000,500000,1000):
+    b = []
+    for n in range (1,f):
+        b.append(n)
+    a.append(f)
+    start_time = timeit.default_timer()
+    insertion_sort(b)
+    tiempos.append(timeit.default_timer()-start_time)
+
+plt.plot(a,tiempos,'ro')
+plt.axis([20000,500000,0,1])
+plt.ylabel('tiempo en segundos')
+plt.xlabel('largo del arreglo')
+plt.show()
