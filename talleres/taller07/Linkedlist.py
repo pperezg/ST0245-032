@@ -39,6 +39,7 @@ class Linkedlist:
         else:
             get_in_place(j - 1).nextNode = get_in_place(j + 1)
             self.size = self.size - 1
+            
     def search_value(self, k):
         temp = self.firstElement
         if temp == k:
