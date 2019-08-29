@@ -16,7 +16,7 @@ def insertion_sort(list):
 
 a = []
 tiempos = []
-for f in range (20000,500000,1000):
+for f in range (20000,50001,10000):
     b = []
     for n in range (1,f):
         b.append(n)
@@ -26,7 +26,7 @@ for f in range (20000,500000,1000):
     tiempos.append(timeit.default_timer()-start_time)
 
 plt.plot(a,tiempos,'ro')
-plt.axis([20000,500000,0,1])
+plt.axis([20000,50000,0,1])
 plt.ylabel('tiempo en segundos')
 plt.xlabel('largo del arreglo')
 plt.show()
