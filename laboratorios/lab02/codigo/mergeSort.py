@@ -48,7 +48,7 @@ for f in range (100000,200001,5000):
     largo.append(f)
     start_time = time.default_timer()
     mergeSort(nums)
-    tiempos.append((time.default_timer()-start_time)/1000)
+    tiempos.append((time.default_timer()-start_time)*1000)
     print(tiempos[j])
     j = j+1
 

@@ -1,4 +1,3 @@
-import matplotlib.pyplot as plt 
 import timeit
 import sys
 
@@ -16,17 +15,14 @@ def insertion_sort(list):
 
 a = []
 tiempos = []
-for f in range (20000,50001,10000):
+for f in range (100000,200001,5000):
     b = []
     for n in range (1,f):
         b.append(n)
     a.append(f)
     start_time = timeit.default_timer()
     insertion_sort(b)
-    tiempos.append(timeit.default_timer()-start_time)
+    tiempos.append((timeit.default_timer()-start_time)*1000)
 
-plt.plot(a,tiempos,'ro')
-plt.axis([20000,50000,0,1])
-plt.ylabel('tiempo en segundos')
-plt.xlabel('largo del arreglo')
-plt.show()
+print(a)
+print(tiempos)
