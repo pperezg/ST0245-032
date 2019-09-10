@@ -1,0 +1,10 @@
+https://stackabuse.com/stacks-and-queues-in-python/
+
+https://realpython.com/how-to-implement-python-stack/
+
+https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html
+
+https://www.geeksforgeeks.org/stack-class-in-java/
+
+
+
