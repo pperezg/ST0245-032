@@ -1,0 +1,40 @@
+import java.util.*;
+import java.io.*;
+
+public class punto1 {
+
+public class Taller8 {
+
+
+    public void cola (LinkedList<Integer> neveras, LinkedList<Integer> solicitudes){
+        
+    }
+    
+    public int polaca  (String string){
+        Stack<Integer> stack = new Stack<Integer>();
+        for (int i=0; i<string.length();i++){
+            if (Character.isDigit(i)){
+                stack.push(Integer.parseInt(String.valueOf(i)));
+            } else {
+                int a = stack.pop();
+                int b = stack.pop();
+                if (string.charAt(i)=='+'){
+                    int c = a+b;
+                    stack.push(c);
+                } else if (string.charAt(i)=='-'){
+                    int c = b-a;
+                    stack.push(c);
+                } else if (string.charAt(i)=='*'){
+                    int c = a*b;
+                    stack.push(c);
+                } else if (string.charAt(i)=='/'){
+                    int c = b/a;
+                    stack.push(c);
+                }
+            }
+        }
+        return stack.pop();
+    }
+}
+    
+}
