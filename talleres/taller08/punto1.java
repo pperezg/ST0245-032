@@ -6,8 +6,13 @@ public class punto1 {
 public class Taller8 {
 
 
-    public void cola (LinkedList<Integer> neveras, LinkedList<Integer> solicitudes){
+    public void cola (Queue<String> neveras, Stack<String> solicitudes){
         
+        while(!neveras.isEmpty() && !solicitudes.empty()){
+            String nev = neveras.poll();
+            String sol = solicitudes.pop();
+            System.out.println("Entregar la nevera "+ nev + " al cliente " + sol);
+        }
     }
     
     public int polaca  (String string){
