@@ -1,8 +1,8 @@
 import timeit
 import sys
-import bisect
+import random
 
-sys.setrecursionlimit(1000000)
+sys.setrecursionlimit(10000000)
 
 def insertionSortRecursive(arr,n):
     if n<=1: 
@@ -20,9 +20,17 @@ def insertionSortRecursive(arr,n):
     
         arr[j+1]=last 
 
-a = []
+q = []
+for w in range (1,2900):
+    q.append(random.randint(1,100000))
+j = len(q)
+start_time = timeit.default_timer()
+insertionSortRecursive(q,j)
+print((timeit.default_timer()-start_time)*1000)
+
+'''a = []
 tiempos = []
-for f in range (2500,3501,50):
+for f in range (100,2001,95):
     b = []
     for n in range (1,f):
         b.append(n)
@@ -33,4 +41,4 @@ for f in range (2500,3501,50):
     tiempos.append((timeit.default_timer()-start_time)*1000)
 
 print(a)
-print(tiempos)
+print(tiempos)'''

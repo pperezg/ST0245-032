@@ -41,7 +41,7 @@ def merging(a,b):
 tiempos = []
 largo = []
 j=0
-for f in range (100000,200001,5000):
+for f in range (1000,20001,950):
     nums = []
     for p in range (1,f+1):
         nums.append(random.randint(1,100000))
