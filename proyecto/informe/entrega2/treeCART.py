@@ -20,3 +20,5 @@ def imp_gini(rows):
         minuscount += chanceOfN**2
     return (1-minuscount)
 
+    
+
