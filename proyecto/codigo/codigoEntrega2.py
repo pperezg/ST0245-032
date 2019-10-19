@@ -1,5 +1,7 @@
 import sys
 import pandas as pd
+import timeit
+import random
 
 class Node:
     
@@ -96,7 +98,7 @@ class RedBlackTree():
             else:
                 node = node.left
         if z == self.EmptyT:
-            print("Said light doesn't belong to any data.")
+            print ("Said light doesn't belong to any data.")
             return 
         y = z
         y_firstColor = y.color
@@ -189,6 +191,14 @@ class RedBlackTree():
             node.parent.left = x
         x.right = node
         node.parent = x
+        
+    def delete(self, light):
+        self.deleteAux(self.root,light)
+        
+    def min(self, node):
+        while node.left != self.EmptyT:
+            node = node.left
+        return node
 
     def insert(self,  ph, soil_temp, soil_moist, light, env_temp, env_humidity, label):
         node = Node(ph, soil_temp, soil_moist, light, env_temp, env_humidity, label)
@@ -219,10 +229,10 @@ class RedBlackTree():
         if node.parent.parent == None:
             return
         
-dta = pd.read_csv("https://raw.githubusercontent.com/pperezg/ST0245-032/master/proyecto/informe/entrega2/data_set_train.csv")
+dta = pd.read_csv("https://raw.githubusercontent.com/mauriciotoro/ST0245-Eafit/master/proyecto/DataSets/test/data_set_test.csv")
 dta.head()
 t = RedBlackTree()
-for n in range(1,50):
+for n in range(1,100):
     ph = dta.at[n,'ph']
     soilT = dta.at[n,'soil_temperature']
     soilM = dta.at[n,'soil_moisture']
@@ -231,4 +241,3 @@ for n in range(1,50):
     envH = dta.at[n,'env_humidity']
     lbl = dta.at[n,'label']
     t.insert(ph, soilT, soilM, light, envT, envH, lbl)
-t.search(1807)
