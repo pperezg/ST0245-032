@@ -35,7 +35,7 @@ class RedBlackTree():
     def helpDelete(self,node):
         while node != self.root and node.color=="Black":
             if node == node.parent.left:
-                temp = x.parent.right
+                temp = node.parent.right
                 if temp.color=="Red":
                     temp.color = "Black"
                     node.parent.color = "Red"
