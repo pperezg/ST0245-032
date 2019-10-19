@@ -29,22 +29,22 @@ for j in range(0,m):
   for q in range (2,cantDeUniones+2):
     origin = listaInstrucciones(j)(q)(0)
     destination = listaInstrucciones(j)(q)(2)
-    matriz[origin][destination] = 1
-    matriz[destination][origin] = 1
+    matrix[origin][destination] = 1
+    matrix[destination][origin] = 1
   colors[0]=2
-  possible = true
+  possible = True
   for w in range(0,size):
     for i in range(0,size):
-      if matriz[w][i]==1:
+      if matrix[w][i]==1:
         if colors[w]==2 and colors[i]==0:
           colors[i]==3
         elif colors[w]==3 and colors[i]==0:
           colors[i]==2
         elif colors[w]==2 and colors[i]==2:
-          possible == false
+          possible == False
         elif colors[w]==3 and colors[i]==3:
-          possible == false
-  if possible == true:
+          possible == False
+  if possible == True:
     print("BICOLORABLE")
   else:
     print("NOT BICOLORABLE")
